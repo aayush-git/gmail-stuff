@@ -12,15 +12,11 @@ from apiclient import errors
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 
-def download_attachments():
+def metadata():
     creds = None
     # The file token.pickle stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
     # time.
-    user_id='me' 	#Paste your user_id here
-    store_dir=""	#Paste your storage directory here
-
-
 
     if os.path.exists('token.pickle'):
         with open('token.pickle', 'rb') as token:
@@ -39,7 +35,7 @@ def download_attachments():
     
 
     metadata=["From","To","Date","Subject"]
-    for i in range(0,10):
+    for i in range(0,10):#you can change according to your choice.
         msg_id=(threads['messages'][i]['id'])
         message = service.users().messages().get(userId=user_id, id=msg_id).execute()
         for j in range(0,len(metadata)):    
@@ -51,4 +47,4 @@ def download_attachments():
 
 
 if __name__ == '__main__':
-    download_attachments()
+   metadata()
