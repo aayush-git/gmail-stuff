@@ -1,1 +1,1 @@
-# These are my gmail codes for downloading and visualizing metadata.
+# These are my gmail codes for downloading attachments and visualizing metadata.
